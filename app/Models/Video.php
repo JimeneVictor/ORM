@@ -19,7 +19,7 @@ class Video extends Model
 
     public function comments()
     {
-        return $this->morphMany(Comments::class,'commentable'); 
+        return $this->morphMany(Comment::class,'commentable'); 
     }
     public function image()
     {

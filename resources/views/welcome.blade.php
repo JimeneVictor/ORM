@@ -21,16 +21,21 @@
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                     
                     
-                        <div class="text-2xl text-center">
-                            Eloquent: Relaciones
-                        </div>       
+                     <div class="flex items-center justify-center h-screen">
+                        <div class="text-center">
+                            <div class="text-2xl mb-6">
+                                Eloquent: Relaciones
+                            </div>
 
-                        <div class="links">
-                            @foreach($users as $user)
-                            <a href="#"> {{@user->name}} </a>
-                            @endforeach
+                            <div class="links space-y-4">
+                                @foreach($users as $user)
+                                    <a href="{{ route("profile", $user->id) }}" class="block text-blue-500 hover:underline">
+                                        {{ $user->name }}
+                                    </a>
+                                @endforeach
+                            </div>
                         </div>
-
+                    </div>
                     
                 </div>
             </div>

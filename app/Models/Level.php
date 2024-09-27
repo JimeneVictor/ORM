@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Level extends Model
 {
+
+     use HasFactory;
+
    public function users()
     {
         return $this->hasMany(User::class);
@@ -14,10 +17,10 @@ class Level extends Model
 
     public function posts()
     {
-        return $this->hasManyOneThrough(Post::class, User::class);
+        return $this->hasManyThrough(Post::class, User::class);
     }
      public function videos()
     {
-        return $this->hasManyOneThrough(Video::class, User::class);
+        return $this->hasManyThrough(Video::class, User::class);
     }
 }
